@@ -1,13 +1,13 @@
 # News_Research_Bot
 
-This project demonstrates the creation of an end-to-end research tool that allows users to input news article URLs and ask questions to retrieve answers from the provided articles using Language Learning and Streamlit.
+This project is an end-to-end research tool that enables users to input URLs of news articles and ask targeted questions, retrieving precise answers from the provided articles. Built using Language Learning Models (LLM) and Streamlit, this tool is ideal for researchers and analysts who need quick insights from a large volume of news articles. 
 
 ## Features
 
-- **Document Loaders**: Load text data from different sources (e.g., URLs, CSV files)
-- **Text Splitting**: Divide large text into smaller chunks using CharacterTextSplitter or RecursiveCharacterTextSplitter
-- **Vector Databases**: Store embeddings of text chunks in a vector database (e.g., faiss)
-- **Retrieval QA with Source Chain**: Retrieve relevant text chunks from the Vector Database based on a user's question and form a prompt for LLM, which then generates the final answer.
+- **Automated Content Loading**: Pulls text from various sources, such as URLs and CSV files.
+- **Efficient Text Splitting**: Divides large text bodies into manageable chunks, improving processing and retrieval efficiency.
+- **Vector Database**: Embeds and stores text chunks in a vector database (FAISS) for quick retrieval.
+- **Question-Answering**: Leverages Retrieval QA with Source Chain to find relevant text chunks, generate responses, and cite sources.
 
 ## Setup and Installation
 
@@ -23,9 +23,9 @@ This project demonstrates the creation of an end-to-end research tool that allow
    pip install -r requirements.txt
    ```
 
-3. **API Configuration**:
+3. **Set Up OpenAI API Key**:
 -  **OpenAI API**: Ensure you have API access for retrieving text chunkss.
--  Create an `.env` file in the root directory and add your API keys:
+-  To use the OpenAI LLMs, store your API key in a `.env` file.
    ```bash
    OPENAI_API_KEY='enter your openapi key here'
    ```
@@ -35,3 +35,9 @@ This project demonstrates the creation of an end-to-end research tool that allow
    ```bash
    streamlit run main.py
    ```
+## Project Workflow
+
+1. **Input News URLs**: Enter up to three news article URLs in the sidebar.
+2. **Data Loading and Processing**: Click "Process URLs" to load and split data into text chunks.
+3. **Embedding Storage**: FAISS stores embeddings of the text chunks for easy retrieval.
+4. **Query and Answer**: Enter your question in the input box to retrieve relevant answers along with sources.
